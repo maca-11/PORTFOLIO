@@ -1,0 +1,181 @@
+body {
+  font-family: "Playfair Display", "Yuji Syuku", serif;
+  background-color: #fef7f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  font-size: 100px;
+  font-style: italic;
+  color: #2f2f2f;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  margin: 60px auto;
+  text-align: center;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.Profile img {
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.About_me {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.nameEn {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nameJp {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.skills-columns {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.skills-content,
+.technology-content {
+  background-color: #fff2e3;
+  border-radius: 10px;
+  padding: 20px 30px;
+  border: 1px solid #d5cfc3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  min-width: 260px;
+}
+
+.skills-content h3,
+.technology-content h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  #title {
+    font-size: 60px;
+  }
+
+  .About_me {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skills-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+}
+
+.skill-bar {
+  margin-bottom: 15px;
+}
+
+.skill-bar label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.bar {
+  height: 14px;
+  background-color: #6e6c6c;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #51d0ff, #3b82f6);
+  color: white;
+  text-align: right;
+  padding-right: 8px;
+  line-height: 14px;
+  font-size: 0.9rem;
+  border-radius: 12px 0 0 12px;
+  transition: width 0.8s ease;
+
+}
+
+.skills-columns-horizontal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.skills-card-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card h4 {
+  font-size: 1.1rem;
+  color: #004d99;
+  margin-bottom: 6px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: #f3f9ff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #004d99;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/typing.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas-basic"></canvas>
+    <header>
+        <a href="../index.html" class="home-link">PORTFOLIO</a>
+    </header>
+    <!-- モーダル領域 -->
+    <!-- モーダル -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <img id="modalImage" alt="拡大画像">
+        <div class="description" id="modalText">ここに説明が入ります</div>
+    </div>
+    <section id="features" class="section">
+        <h3 class="section_subtitle">タイピングゲーム紹介</h3>
+
+        <!-- 難易度選択画面 -->
+        <div class="feature_card">
+            <img src="/img/typing/home.png" alt="難易度選択画面" onclick="openModal(this)">
+            <div>
+                <h4>難易度選択画面</h4>
+                <p>
+                    「簡単」「普通」「難しい」の3種類から難易度を選べるトップページです。
+                    図形が遊び心を添え、ボタン配色で難易度を直感的に伝えています。
+                </p>
+            </div>
+        </div>
+
+        <!-- イージーモード：開始待機中 -->
+        <div class="feature_card">
+            <img src="/img/typing/start.png" alt="ゲーム開始画面" onclick="openModal(this)">
+            <div>
+                <h4>スタート待機中</h4>
+                <p>
+                    「Press SpaceKey」表示後、カウントダウンでタイピングが始まります。
+                    初期状態のUIで初心者も安心してスタートできる導線に設計しています。
+                </p>
+            </div>
+        </div>
+
+        <div class="feature_card">
+            <img src="/img/typing/play.png" alt="プレイ画面" onclick="openModal(this)">
+            <div>
+                <h4>プレイ中</h4>
+                <p>
+                    正解文字は緑色でハイライト表示、残り時間やミスタイプ数もリアルタイム表示。
+                    緊張感と正確性のバランスを求められる設計になっています。
+                </p>
+            </div>
+        </div>
+
+        <div class="feature_card">
+            <img src="/img/typing/play2.png" alt="プレイ画面2" onclick="openModal(this)">
+            <div>
+                <h4>プレイ中2</h4>
+                <p>
+                    制限時間45秒、スコア判定は高倍率かつペナルティも厳しめに設定。
+                    上位ランク“S”を獲得するには瞬発力と精度が求められる本格モードです。
+                </p>
+            </div>
+        </div>
+
+        <div class="feature_card">
+            <img src="/img/typing/result.png" alt="結果表示画面" onclick="openModal(this)">
+            <div>
+                <h4>ゲーム結果画面</h4>
+                <p>
+                    スコア・ミスタイプ数・経過時間・ランクを表示。色によって達成度が強調され、ユーザーに達成感を与えます。
+                    「もう一度プレイ」「トップへ戻る」選択も分かりやすく配置しています。
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="scoreLogic" class="section">
+        <h3 class="section_subtitle">スコア・評価ロジック</h3>
+        <p>
+            各モードでは、タイピングの正確性・速度・ミスタイプ数に基づいてスコアを算出し、ランク(S〜D)を付けています。
+            モードごとの評価式は以下の通りです。
+        </p>
+
+        <table class="score_table">
+            <thead>
+                <tr>
+                    <th>モード</th>
+                    <th>計算式</th>
+                    <th>制限時間</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>イージー</td>
+                    <td>(正解×100) − (ミス×20) − 経過秒数</td>
+                    <td>60秒</td>
+                </tr>
+                <tr>
+                    <td>ノーマル</td>
+                    <td>(正解×120) − (ミス×25) − 経過秒数×1.2</td>
+                    <td>50秒</td>
+                </tr>
+                <tr>
+                    <td>ハード</td>
+                    <td>(正解×150) − (ミス×30) − 経過秒数×1.5</td>
+                    <td>45秒</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="rank_visual">
+            <h4>成績ランク分布</h4>
+            <ul>
+                <li><span class="rank_s">Sランク</span>: 800点以上</li>
+                <li><span class="rank_a">Aランク</span>: 600〜799点</li>
+                <li><span class="rank_b">Bランク</span>: 400〜599点</li>
+                <li><span class="rank_c">Cランク</span>: 200〜399点</li>
+                <li><span class="rank_d">Dランク</span>: 199点以下</li>
+            </ul>
+        </div>
+    </section>
+    <section id="metaInfo" class="section">
+        <h3 class="section_subtitle">制作情報</h3>
+        <p>
+            制作期間：1か月（2025年6月〜7月）
+            使用技術：HTML / CSS / JavaScript
+            担当範囲：企画・設計・コーディング・UIデザイン全般
+            主な工夫：UXとゲーム性の両立／スコアロジック設計／段階的難易度設計
+        </p>
+    </section>
+    <script src="../js/TyPortfolio.js"></script>
+
+</body>
+
+</html>

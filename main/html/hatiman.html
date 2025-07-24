@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/hatiman.css" />
+  <title>八幡平ハイツ 予約管理アプリ</title>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html" class="home-link">PORTFOLIO</a>
+  </header>
+
+  <!-- モーダル表示 -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="modalImage" alt="拡大画像" />
+    <div class="description" id="modalText">ここに説明が入ります</div>
+  </div>
+
+  <!-- アプリ機能紹介 -->
+  <section id="features" class="section">
+    <h3 class="section_subtitle">八幡平ハイツ 予約管理アプリ</h3>
+
+    <div class="feature_card">
+      <img src="/img/reservation/home.png" alt="入力画面" onclick="openModal(this)">
+      <div>
+        <h4>予約入力画面</h4>
+        <p>
+          氏名、人数、チェックイン／アウト日、プラン選択、宴会・送迎オプションなどをGUI上で登録可能。
+          入力欄を3つのセクションに整理し、操作しやすい設計にしています。
+        </p>
+      </div>
+    </div>
+
+    <div class="feature_card">
+      <img src="/img/reservation/after_input.png" alt="見積もり結果画面" onclick="openModal(this)">
+      <div>
+        <h4>見積もり結果表示</h4>
+        <p>
+          条件に応じて金額を計算し表示。プラン追加、土曜加算、長期滞在割引など細かいロジックを反映した見積が可能。
+        </p>
+      </div>
+    </div>
+
+    <div class="feature_card">
+      <img src="/img/reservation/reservation_management.png" alt="管理画面" onclick="openModal(this)">
+      <div>
+        <h4>予約管理画面</h4>
+        <p>
+          一覧表示＋状態判定（滞在中／チェックアウト済）をTreeviewで確認できる管理者画面。チェックアウト処理で空室も更新されます。
+        </p>
+      </div>
+    </div>
+
+    <div class="feature_card">
+      <img src="/img/reservation/gmail.png" alt="メール送信" onclick="openModal(this)">
+      <div>
+        <h4>メール通知（HTML形式）</h4>
+        <p>
+          自動生成された確認メールをSMTP経由で送信。利用者に安心感を与えるフォーマットと情報量を備えています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ロジック解説 -->
+  <section id="scoreLogic" class="section">
+    <h3 class="section_subtitle">見積・バリデーションロジック</h3>
+    <p>
+      見積金額は、宿泊人数・部屋タイプ・チェックイン曜日・滞在日数・プラン内容などに基づき計算されます。
+      宴会ありの場合は固定単価×人数で料金が算出されます。
+    </p>
+
+    <table class="score_table">
+      <thead>
+        <tr>
+          <th>条件</th>
+          <th>計算内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>宴会あり</td>
+          <td>宴会場料金 × 人数</td>
+        </tr>
+        <tr>
+          <td>宴会なし</td>
+          <td>部屋料金 × 人数 + プラン料金 × 人数</td>
+        </tr>
+        <tr>
+          <td>土曜チェックイン</td>
+          <td>追加2,000円 × 人数</td>
+        </tr>
+        <tr>
+          <td>長期滞在割引</td>
+          <td>3泊以上→5%割引 ／ 7泊以上→10%割引</td>
+        </tr>
+        <tr>
+          <td>重複予約回避</td>
+          <td>同日・同部屋・同氏名の予約をブロック</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 制作情報 -->
+  <section id="metaInfo" class="section">
+    <h3 class="section_subtitle">制作情報</h3>
+    <p>
+      制作期間：1か月（2025年6月〜7月）<br>
+      使用技術：Python（Tkinter） / JSON / SMTP（メール） / モジュール分割設計<br>
+      チーム体制：3名（フロント1名・バックエンド2名）<br>
+      担当範囲：予約確定・見積ロジック・データ保存・メール通知のバックエンド構築<br>
+      主な工夫：実務仕様に合わせた処理設計・UI連携・自動通知の即時性
+    </p>
+  </section>
+
+  <script src="../main/js/TyPortfolio.js"></script>
+</body>
+</html>

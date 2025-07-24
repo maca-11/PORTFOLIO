@@ -1,0 +1,177 @@
+
+.section {
+  max-width: 1000px;        /* 横幅を制限して中央に */
+  margin: 0 auto;           /* 左右の余白を自動で均等 → 中央寄せ */
+  padding: 40px 20px;       /* 上下＆左右余白を追加 */
+}
+
+.feature_card {
+  display: flex;
+  align-items: flex-start;   /* カード内テキストの縦位置を上に揃える */
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.feature_card img {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.feature_card div {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.feature_card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature_card img {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.feature_card img:hover {
+  transform: scale(1.05);
+}
+
+.feature_card div h4 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.feature_card div p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.score_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.score_table th, .score_table td {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.rank_visual ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.rank_visual li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.rank_s { color: gold; font-weight: bold; }
+.rank_a { color: blue; font-weight: bold; }
+.rank_b { color: green; font-weight: bold; }
+.rank_c { color: brown; font-weight: bold; }
+.rank_d { color: gray; font-weight: bold; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding-top: 60px;
+}
+
+.modal img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.description {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;           /* ← ここでサイズUP！ */
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 1000;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  padding: 5px 15px;
+  line-height: 1;
+}
+
+.close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+header {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: transparent;
+}
+
+.home-link {
+  font-size: 28px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.home-link:hover {
+  color: #007BFF;
+}
+
+.feature_card {
+  background-color: #ffffff;
+  border-left: 8px solid #007BFF; /* 左枠でアクセント強調 */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+body {
+  background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+}
+
+.section_subtitle {
+  color: #2c3e50;
+  border-bottom: 2px solid #007BFF;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+}
+#canvas-basic {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;             /* 背面に配置してコンテンツを前に出す！ */
+}
+header, .section {
+  position: relative;
+  z-index: 1;
+}

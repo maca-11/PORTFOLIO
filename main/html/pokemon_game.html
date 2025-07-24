@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/poke.css" />
+  <title>ポケットモンスター風バトルゲーム</title>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html" class="home-link">PORTFOLIO</a>
+  </header>
+
+  <!-- モーダル（画像拡大） -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="modalImage" alt="拡大画像" />
+    <div class="description" id="modalText">ここに説明が入ります</div>
+  </div>
+
+  <!-- トップ画面 -->
+  <section id="features" class="section">
+    <h3 class="section_subtitle">ポケモン風ゲーム紹介</h3>
+
+    <div class="feature_card">
+      <img src="/Portfolio/img/poke/home.png" alt="タイトル画面" onclick="openModal(this)">
+      <div>
+        <h4>タイトル画面</h4>
+        <p>
+          モザイク加工された背景と「TAP TO START!」の演出で、冒険の始まりを演出。
+          BGM付きで没入感を高めました。
+        </p>
+      </div>
+    </div>
+
+    <div class="feature_card">
+      <img src="/Portfolio/img/poke/battle.png" alt="バトル開始画面" onclick="openModal(this)">
+      <div>
+        <h4>バトル開始画面</h4>
+        <p>
+          「強敵のガブリアスが現れた！」と登場演出があり、HPバーと技選択ボタンを表示してバトルの緊迫感を強調。
+        </p>
+      </div>
+    </div>
+
+    <div class="feature_card">
+      <img src="/Portfolio/img/poke/select.png" alt="技選択画面" onclick="openModal(this)">
+      <div>
+        <h4>技選択フェーズ</h4>
+        <p>
+          「しんそく」「げきりん」「ほのおのパンチ」「りゅうのまい」から選択。
+          威力・命中・特殊効果の違いで戦略性が生まれます。
+        </p>
+      </div>
+    </div>
+
+    <div class="feature_card">
+      <img src="/Portfolio/img/poke/attack.png" alt="技説明画面" onclick="openModal(this)">
+      <div>
+        <h4>技説明画面</h4>
+        <p>
+          各技の説明テキストと配置により、見やすく情報を整理。
+          「戦闘へ戻る」でHP状態を保持して遷移可能な設計。
+        </p>
+      </div>
+    </div>
+
+    <div class="feature_card">
+      <img src="/Portfolio/img/poke/win.png" alt="勝利演出画面" onclick="openModal(this)">
+      <div>
+        <h4>勝利画面</h4>
+        <p>
+          HPギリギリの状態で勝利した際に「ガブリアスに勝った！」と表示。
+          Messagebox演出で達成感を演出しています。
+        </p>
+      </div>
+    </div>
+
+    <div class="feature_card">
+      <img src="/Portfolio/img/poke/yubiwohuru.png" alt="ゆびをふるモード画面" onclick="openModal(this)">
+      <div>
+        <h4>ゆびをふるモード</h4>
+        <p>
+          技が完全にランダムになるモード。発動技や効果、ダメージ量が毎ターン変わるエンタメ性の高い設計です。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ゲームロジック -->
+  <section id="scoreLogic" class="section">
+    <h3 class="section_subtitle">バトルロジック</h3>
+    <p>
+      ターン制でプレイヤーと敵が交互に技を発動。技ごとに威力・命中・PPがあり、「りゅうのまい」で次の技のダメージが1.5倍になるなどの特殊効果も。
+      ゆびをふるモードでは約15種の技の中からランダムに発動され、戦略性よりも運と演出を重視した仕組みになっています。
+    </p>
+  </section>
+
+  <!-- 制作情報 -->
+  <section id="metaInfo" class="section">
+    <h3 class="section_subtitle">制作情報</h3>
+    <p>
+      制作期間：1か月（2024年9月〜10月）<br>
+      使用技術：Python / Tkinter / PIL / pygame / messagebox<br>
+      担当範囲：全体設計・技ロジック・UI構成・BGM連携・画像演出<br>
+      主な工夫：ターン制戦闘／技の個性付け／エンタメ性とUXの両立／著作権配慮（画像加工）
+    </p>
+  </section>
+
+  <script src="/Portfolio/main/js/TyPortfolio.js"></script>
+
+</body>
+</html>

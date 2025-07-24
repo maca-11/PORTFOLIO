@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/shoping.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="home-link">PORTFOLIO</a>
+    </header>
+    <main>
+        <!-- 拡大画像表示用モーダル -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage" alt="拡大表示">
+        </div>
+        <section id="overview" class="section">
+            <h2 class="section_title">帝愛グループショッピング</h2>
+            <p class="description">
+                Python（Tkinter）とMySQLを用いて、ローカル環境で動作するショッピングアプリケーションを開発しました。GUI操作により、商品閲覧から購入までの流れを体験できます。
+            </p>
+        </section>
+        <section id="tech" class="section">
+            <h3 class="section_subtitle">使用技術</h3>
+            <ul class="tech_list">
+                <li>Python（GUI構築にTkinter使用）</li>
+                <li>MySQL（ユーザー・商品・カート情報管理）</li>
+                <li>PIL（背景画像表示）</li>
+                <li>hashlib / salt（パスワードの暗号化）</li>
+            </ul>
+        </section>
+        <section id="features" class="section">
+            <h3 class="section_subtitle">画面・機能紹介</h3>
+            <p>画像をクリックすると拡大します</p>
+            <div class="feature_card">
+                <img src="/img/shoping/ホーム.png" alt="ログイン画面" onclick="openModal(this)">
+                <div>
+                    <h4>ログイン画面</h4>
+                    <p>ユーザーと管理者の両方に対応したログイン機能を実装しています。
+                        パスワードはソルト＋ハッシュ化で安全に管理されており、権限に応じて別画面へ分岐する設計になっています。
+                        エンターキーでもログインできるように、キーボードイベントにも対応しています。
+                    </p>
+                </div>
+            </div>
+            <div class="feature_card">
+                <img src="/img/shoping/ユーザー情報変更.png" alt="ユーザー情報編集" onclick="openModal(this)">
+                <div>
+                    <h4>ユーザー情報変更</h4>
+                    <p>登録後もユーザー自身がID・名前・メールアドレスを変更できるように設計しています。
+                        ComboBoxで変更対象を選び、入力欄で新しい値を指定することで情報が更新され、DBにも即時反映されます。
+                        プレースホルダーや変更後のフィードバック表示など、UIの使いやすさにも配慮しました。
+                    </p>
+                </div>
+            </div>
+            <div class="feature_card">
+                <img src="/img/shoping/管理者画面.png" alt="管理者画面" onclick="openModal(this)">
+                <div>
+                    <h4>管理者用画面</h4>
+                    <p>管理者ログイン後にアクセスできる専用メニューです。
+                        商品情報の登録やジャンル追加、商品一覧の編集など、管理業務に必要な機能をまとめています。
+                        権限による画面の切り替えと機能制限を明確に設計しています。
+                    </p>
+                </div>
+            </div>
+            <div class="feature_card">
+                <img src="/img/shoping/商品登録.png" alt="商品登録" onclick="openModal(this)">
+                <div>
+                    <h4>商品登録</h4>
+                    <p>新しい商品やジャンルを登録できるフォーム画面です。
+                        フィールドごとのバリデーションや、ジャンルIDとの外部キー連携を意識して設計しました。
+                        管理者のみがアクセスできるように認証処理が制御されています。
+
+                    </p>
+                </div>
+            </div>
+            <div class="feature_card">
+                <img src="/img/shoping/商品一覧(管理者).png" alt="商品一覧(管理者)" onclick="openModal(this)">
+                <div>
+                    <h4>商品一覧画面(管理者)</h4>
+                    <p>登録済みの商品をジャンルごとに表示し、編集・削除・ID変更などが可能です。
+                        TreeViewによる一覧表示で、商品ごとの詳細がひと目で分かる構成になっています。
+                        商品の検索やジャンルフィルター機能によって、管理効率を向上させています。
+                    </p>
+                </div>
+            </div>
+            <div class="feature_card">
+                <img src="/img/shoping/商品一覧.png" alt="商品一覧" onclick="openModal(this)">
+                <div>
+                    <h4>商品一覧</h4>
+                    <p>ユーザーは商品をジャンル別・名前検索で絞り込み、カート追加や購入処理が行えます。
+                        GUIアプリながら、Webサイトと似たショッピング体験を提供する設計にこだわりました。
+                        商品ごとの在庫・価格も明示しており、視認性の高い一覧形式になっています。
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="database" class="section">
+            <h3 class="section_subtitle">データベース設計</h3>
+            <p>主なテーブル構成：</p>
+            <table>
+                <tr>
+                    <th>テーブル名</th>
+                    <th>目的</th>
+                </tr>
+                <tr>
+                    <td>users</td>
+                    <td>ユーザー情報・権限管理</td>
+                </tr>
+                <tr>
+                    <td>goods</td>
+                    <td>商品情報管理</td>
+                </tr>
+                <tr>
+                    <td>cart</td>
+                    <td>カート内の商品管理</td>
+                </tr>
+                <tr>
+                    <td>purchase_history</td>
+                    <td>購入履歴を記録</td>
+                </tr>
+            </table>
+        </section>
+        <section id="point" class="section">
+            <h3 class="section_subtitle">工夫ポイント</h3>
+            <ul>
+                <li>イベント処理（ダブルクリックで購入／右クリックで削除）</li>
+                <li>パスワード管理にソルト＋ハッシュ化を導入</li>
+                <li>ジャンルによる商品絞り込み検索が可能</li>
+                <li>管理者・ユーザーでUIと機能を切り分けた設計</li>
+            </ul>
+        </section>
+        <section id="extra" class="section">
+            <h3 class="section_subtitle">その他情報</h3>
+            <ul>
+                <li>制作期間：約一か月（期末課題）</li>
+                <li>開発環境：Windows / MySQL / Tkinter</li>
+                <li>役割：設計・フロント・バックエンド・DB構築すべて担当</li>
+            </ul>
+        </section>
+
+    </main>
+    <script>
+        function openModal(imgElement) {
+            document.getElementById("imageModal").style.display = "block";
+            document.getElementById("modalImage").src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
