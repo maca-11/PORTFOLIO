@@ -1,0 +1,3 @@
+# リポジトリのルートに置くファイル例
+* text=auto
+*.js text eol=lf
